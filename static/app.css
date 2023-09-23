@@ -1,0 +1,36 @@
+body {
+  background-color: rgb(74, 119, 187);
+  color: white;
+  font-size: 2rem;
+}
+
+a {
+  background-color: rgb(21, 81, 171);
+  border-radius: 1rem;
+  text-decoration: none;
+  color: white;
+  padding: 0.7rem;
+}
+input {
+  border: none;
+  font-size: 2rem;
+  padding: 1rem;
+}
+button {
+  font-size: 2rem;
+  background-color: rgb(21, 81, 171);
+  color: white;
+  border: none;
+  border-radius: 0.7rem;
+  padding: 1rem;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+.result {
+  display: flex;
+  justify-content: center;
+}

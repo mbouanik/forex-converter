@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, flash
+from flask import Flask, render_template, request, flash
 import requests
 from currency_symbols import CurrencySymbols
 

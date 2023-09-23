@@ -42,7 +42,7 @@ def converter():
 
         return render_template(
             "converter.html",
-            currency=f"{CurrencySymbols.get_symbol(currency_two)} {data['result']}",
+            currency=f"{CurrencySymbols.get_symbol(currency_two)}{data['result']}",
         )
     return redirect("/")
 

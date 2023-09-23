@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, flash, redirect
 import requests
 from currency_symbols import CurrencySymbols
 
@@ -15,15 +15,16 @@ def home():
 def converter():
     curency_one = request.form.get("currency_one").upper()
     currency_two = request.form.get("currency_two").upper()
-    amount = request.form.get("amount", 1)
+    amount = request.form.get("amount")
 
     symbols_response = requests.get("https://api.exchangerate.host/symbols")
     symbols = symbols_response.json()["symbols"]
-
     if curency_one not in symbols:
         flash(f"Not a valid currency {curency_one}", "error")
     elif currency_two not in symbols:
         flash(f"Not a valid currency {currency_two}", "error")
+    elif not amount.isnumeric():
+        flash("Not a valid amount", "error")
     else:
         url = f"https://api.exchangerate.host/convert"
         response = requests.get(
@@ -38,11 +39,12 @@ def converter():
         )
         data = response.json()
         print(data)
+
         return render_template(
             "converter.html",
             currency=f"{CurrencySymbols.get_symbol(currency_two)} {data['result']}",
         )
-    return render_template("app.html")
+    return redirect("/")
 
 
 if __name__ == "__main__":

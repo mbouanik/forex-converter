@@ -1,22 +1,24 @@
 {% extends 'base.html' %} {% block title%}Forex Converter {% endblock %} {%
 block content %}
-<div class="home">
-  <h1>Forex Converter</h1>
-</div>
-<div class="home">
-  <form action="/converter" method="post">
-    <div class="home"></div>
-    <input type="text" placeholder="Currency" name="currency_one" />
-    <input
-      type="text"
-      placeholder="Currency To Convert To"
-      name="currency_two"
-    />
-    <input type="text" name="amount" placeholder="Amount default: 1" />
-    <div class="home">
-      <button>Convert</button>
-    </div>
-  </form>
+<div class="bg">
+  <div class="home">
+    <h1>Forex Converter</h1>
+  </div>
+  <div class="home">
+    <form action="/converter" method="post">
+      <input type="text" placeholder="Currency" name="currency_one" required />
+      <input
+        type="text"
+        placeholder="Currency To Convert To"
+        name="currency_two"
+        required
+      />
+      <input type="text" name="amount" placeholder="Amount" required />
+      <div class="home">
+        <button class="btn">Convert</button>
+      </div>
+    </form>
+  </div>
 </div>
 
 {%endblock%}

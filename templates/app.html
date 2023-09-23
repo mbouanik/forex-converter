@@ -6,14 +6,22 @@ block content %}
   </div>
   <div class="home">
     <form action="/converter" method="post">
-      <input type="text" placeholder="Currency" name="currency_one" required />
-      <input
-        type="text"
-        placeholder="Currency To Convert To"
-        name="currency_two"
-        required
-      />
-      <input type="text" name="amount" placeholder="Amount" required />
+      <div class="home">
+        <input
+          type="text"
+          placeholder="Currency A"
+          name="currency_one"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Currency B"
+          name="currency_two"
+          required
+        />
+        <input type="text" name="amount" placeholder="Amount" required />
+      </div>
+
       <div class="home">
         <button class="btn">Convert</button>
       </div>

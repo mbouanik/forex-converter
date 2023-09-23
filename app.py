@@ -39,7 +39,7 @@ def converter():
         data = response.json()
         print(data)
         return render_template(
-            "convert.html",
+            "converter.html",
             currency=f"{CurrencySymbols.get_symbol(currency_two)} {data['result']}",
         )
     return render_template("app.html")
